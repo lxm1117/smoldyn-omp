@@ -1,0 +1,34 @@
+# Smoldyn configuration file to test blbr BioNetGen network.
+
+
+# Graphical output
+graphics opengl_good
+
+# System space and time definitions
+dim 3
+boundaries 0 0 100 r
+boundaries 1 0 100 r
+boundaries 2 0 10 r
+time_start 0
+time_stop 10
+time_step 0.01
+
+# Molecular species and their properties
+species R L
+difc R 3
+difc L 2
+color R green
+color L red
+display_size all(all) 0.02
+
+start_bngnet blbr
+multiply unimolecular_rate 1
+multiply bimolecular_rate 1
+read_file blbr.net
+end_bngnet
+
+mol 500 R u u u
+mol 100 L u u u
+
+end_file
+

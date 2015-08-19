@@ -1,0 +1,117 @@
+# Smoldyn reaction list converted automatically from BioNetGen output
+
+species s1	# R(r,r)
+species s2	# L(l,l)
+species s3	# L(l,l!1).R(r,r!1)
+species s4	# L(l,l!1).L(l,l!2).R(r!2,r!1)
+species s5	# L(l!1,l!2).R(r,r!2).R(r,r!1)
+species s6	# L(l!1,l!2).L(l,l!3).R(r!1,r!3).R(r,r!2)
+species s7	# L(l!1,l!2).R(r!2,r!1)
+species s8	# L(l!1,l!2).L(l,l!3).L(l,l!4).R(r!4,r!1).R(r!3,r!2)
+species s9	# L(l!1,l!2).L(l!3,l!4).R(r!4,r!2).R(r,r!3).R(r,r!1)
+species s10	# L(l!1,l!2).L(l!3,l!4).L(l,l!5).R(r!1,r!3).R(r!2,r!5).R(r,r!4)
+species s11	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).R(r!5,r!1).R(r!3,r!2).R(r,r!6).R(r,r!4)
+species s12	# L(l!1,l!2).L(l!3,l!4).L(l,l!5).L(l,l!6).R(r!4,r!2).R(r!3,r!5).R(r!1,r!6)
+species s13	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l,l!7).R(r!1,r!3).R(r!2,r!5).R(r!4,r!7).R(r,r!6)
+species s14	# L(l!1,l!2).L(l!3,l!4).R(r!4,r!2).R(r!3,r!1)
+species s15	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l,l!7).L(l,l!8).R(r!5,r!1).R(r!3,r!2).R(r!6,r!7).R(r!4,r!8)
+species s16	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l!7,l!8).R(r!4,r!2).R(r!3,r!5).R(r!1,r!7).R(r,r!6).R(r,r!8)
+species s17	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l!7,l!8).L(l,l!9).R(r!1,r!3).R(r!2,r!5).R(r!4,r!7).R(r!6,r!9).R(r,r!8)
+species s18	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).R(r!6,r!4).R(r!5,r!1).R(r!3,r!2)
+species s19	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l!7,l!8).R(r!7,r!3).R(r!5,r!4).R(r!8,r!1).R(r!6,r!2)
+species s20	# L(l!1,l!2).L(l!3,l!4).L(l!5,l!6).L(l!7,l!8).L(l!9,l!10).R(r!6,r!4).R(r!5,r!7).R(r!3,r!9).R(r!8,r!1).R(r!10,r!2)
+
+reaction rxn1 s1 + s2 -> s3 4   #Rule1
+reaction rxn2 s2 + s3 -> s4 2   #Rule1
+reaction rxn3 s3 -> s1 + s2 1   #Rule1r
+reaction rxn4 s1 + s3 -> s5 2   #Rule2
+reaction rxn5 s3 + s3 -> s6 1   #Rule2
+reaction rxn6 s3 -> s7 1   #Rule3
+reaction rxn7 s2 + s5 -> s6 4   #Rule1
+reaction rxn8 s2 + s6 -> s8 2   #Rule1
+reaction rxn9 s4 -> s2 + s3 2   #Rule1r
+reaction rxn10 s6 -> s2 + s5 1   #Rule1r
+reaction rxn11 s1 + s4 -> s6 4   #Rule2
+reaction rxn12 s1 + s6 -> s9 2   #Rule2
+reaction rxn13 s3 + s4 -> s8 2   #Rule2
+reaction rxn14 s3 + s6 -> s10 2   #Rule2
+reaction rxn15 s3 + s5 -> s9 2   #Rule2
+reaction rxn16 s4 + s5 -> s10 4   #Rule2
+reaction rxn17 s5 + s6 -> s11 2   #Rule2
+reaction rxn18 s4 + s6 -> s12 2   #Rule2
+reaction rxn19 s6 + s6 -> s13 1   #Rule2
+reaction rxn20 s5 -> s1 + s3 2   #Rule2r
+reaction rxn21 s6 -> s3 + s3 1   #Rule2r
+reaction rxn22 s6 -> s1 + s4 1   #Rule2r
+reaction rxn23 s6 -> s14 1   #Rule3
+reaction rxn24 s7 -> s3 2   #Rule3r
+reaction rxn25 s2 + s9 -> s10 4   #Rule1
+reaction rxn26 s2 + s10 -> s12 2   #Rule1
+reaction rxn27 s2 + s11 -> s13 4   #Rule1
+reaction rxn28 s2 + s13 -> s15 2   #Rule1
+reaction rxn29 s8 -> s2 + s6 2   #Rule1r
+reaction rxn30 s10 -> s2 + s9 1   #Rule1r
+reaction rxn31 s12 -> s2 + s10 2   #Rule1r
+reaction rxn32 s13 -> s2 + s11 1   #Rule1r
+reaction rxn33 s1 + s8 -> s10 4   #Rule2
+reaction rxn34 s1 + s10 -> s11 2   #Rule2
+reaction rxn35 s1 + s12 -> s13 4   #Rule2
+reaction rxn36 s1 + s13 -> s16 2   #Rule2
+reaction rxn37 s3 + s8 -> s12 2   #Rule2
+reaction rxn38 s3 + s10 -> s13 2   #Rule2
+reaction rxn39 s3 + s12 -> s15 2   #Rule2
+reaction rxn40 s3 + s13 -> s17 2   #Rule2
+reaction rxn41 s5 + s8 -> s13 4   #Rule2
+reaction rxn42 s5 + s10 -> s16 2   #Rule2
+reaction rxn43 s5 + s12 -> s17 4   #Rule2
+reaction rxn44 s6 + s8 -> s15 2   #Rule2
+reaction rxn45 s6 + s10 -> s17 2   #Rule2
+reaction rxn46 s3 + s9 -> s11 2   #Rule2
+reaction rxn47 s4 + s9 -> s13 4   #Rule2
+reaction rxn48 s6 + s9 -> s16 2   #Rule2
+reaction rxn49 s8 + s9 -> s17 4   #Rule2
+reaction rxn50 s4 + s10 -> s15 2   #Rule2
+reaction rxn51 s3 + s11 -> s16 2   #Rule2
+reaction rxn52 s4 + s11 -> s17 4   #Rule2
+reaction rxn53 s8 -> s3 + s4 2   #Rule2r
+reaction rxn54 s9 -> s3 + s5 2   #Rule2r
+reaction rxn55 s9 -> s1 + s6 2   #Rule2r
+reaction rxn56 s10 -> s4 + s5 1   #Rule2r
+reaction rxn57 s10 -> s3 + s6 2   #Rule2r
+reaction rxn58 s10 -> s1 + s8 1   #Rule2r
+reaction rxn59 s11 -> s3 + s9 2   #Rule2r
+reaction rxn60 s11 -> s5 + s6 2   #Rule2r
+reaction rxn61 s11 -> s1 + s10 2   #Rule2r
+reaction rxn62 s12 -> s4 + s6 2   #Rule2r
+reaction rxn63 s12 -> s3 + s8 2   #Rule2r
+reaction rxn64 s13 -> s6 + s6 1   #Rule2r
+reaction rxn65 s13 -> s4 + s9 1   #Rule2r
+reaction rxn66 s13 -> s5 + s8 1   #Rule2r
+reaction rxn67 s13 -> s3 + s10 2   #Rule2r
+reaction rxn68 s13 -> s1 + s12 1   #Rule2r
+reaction rxn69 s10 -> s18 1   #Rule3
+reaction rxn70 s13 -> s19 1   #Rule3
+reaction rxn71 s14 -> s6 4   #Rule3r
+reaction rxn72 s2 + s16 -> s17 4   #Rule1
+reaction rxn73 s15 -> s2 + s13 2   #Rule1r
+reaction rxn74 s17 -> s2 + s16 1   #Rule1r
+reaction rxn75 s1 + s15 -> s17 4   #Rule2
+reaction rxn76 s15 -> s4 + s10 2   #Rule2r
+reaction rxn77 s15 -> s6 + s8 2   #Rule2r
+reaction rxn78 s15 -> s3 + s12 2   #Rule2r
+reaction rxn79 s16 -> s6 + s9 2   #Rule2r
+reaction rxn80 s16 -> s5 + s10 2   #Rule2r
+reaction rxn81 s16 -> s3 + s11 2   #Rule2r
+reaction rxn82 s16 -> s1 + s13 2   #Rule2r
+reaction rxn83 s17 -> s8 + s9 1   #Rule2r
+reaction rxn84 s17 -> s6 + s10 2   #Rule2r
+reaction rxn85 s17 -> s4 + s11 1   #Rule2r
+reaction rxn86 s17 -> s5 + s12 1   #Rule2r
+reaction rxn87 s17 -> s3 + s13 2   #Rule2r
+reaction rxn88 s17 -> s1 + s15 1   #Rule2r
+reaction rxn89 s17 -> s20 1   #Rule3
+reaction rxn90 s18 -> s10 6   #Rule3r
+reaction rxn91 s19 -> s13 8   #Rule3r
+reaction rxn92 s20 -> s17 10   #Rule3r
+
+end_file
