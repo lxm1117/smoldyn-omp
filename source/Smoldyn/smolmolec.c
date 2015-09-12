@@ -985,7 +985,10 @@ moleculeptr molalloc(int dim) {
 	CHECKMEM(mptr->posoffset=(double*) calloc(dim,sizeof(double)));
 	for(d=0;d<dim;d++)
 		mptr->pos[d]=mptr->posx[d]=mptr->via[d]=mptr->posoffset[d]=0;
+	//ximi
+	//printf("molalloc()  th_id: %d, &mptr->pos: %u, &mptr->pos[0]: %u\n", omp_get_thread_num(), &(mptr->pos), &(mptr->pos[0]));
 	return mptr;
+
  failure:
 	molfree(mptr);
 	simLog(NULL,10,"Unable to allocate memory in molalloc");
@@ -1408,6 +1411,8 @@ int molexpandlist(molssptr mols,int dim,int ll,int nspaces,int nmolecs) {
 			newlist[m]=NULL; }
 		for(m=mols->topd;m<mols->topd+nmolecs;m++) {		// create new empty molecules
 			newlist[m]=molalloc(dim);
+			//ximi
+			//printf("molexpandlist()  th_id: %d, &mols->sim: %u, &mols->sim->mols: %u, &mols->sim->mols->sim: %u, &mols: %u\n", omp_get_thread_num(), &(mols->sim), &(mols->sim->mols), &(mols->sim->mols->sim), &mols); 
 			if(!newlist[m]) return 4; }
 		mols->topd+=nmolecs;
 		mols->nd+=nmolecs; }
@@ -2086,6 +2091,8 @@ moleculeptr getnextmol(molssptr mols) {
 		if(mols->maxdlimit>=0 && mols->maxd+nmol>mols->maxdlimit)
 			nmol=mols->maxdlimit-mols->maxd;
 		er=molexpandlist(mols,mols->sim->dim,-1,nmol,nmol);
+		//ximi
+		//printf("getnextmol()  th_id: %d, &mols: %u, &mols->sim: %u, &mols->sim->mols: %u\n", omp_get_thread_num(), &mols, &(mols->sim), &(mols->sim->mols)); 
 		if(er) return NULL; }
 	mptr=mols->dead[--mols->topd];
 	mptr->serno=mols->serno++;
@@ -2430,12 +2437,12 @@ int diffuse(simptr sim) {
 		if(sim->mols->diffuselist[ll]) {
 			//mlist=mols->live[ll];
 			nmol=mols->nl[ll];
-			double dpos[nmol];	
+			//double dpos[nmol];	
 			//mptr->pos=(double*)malloc(dim*sizeof(double));				
 			// important for no segmentation fault: no difstep, gtable -- these are pointers?
 
 			#pragma omp for private(m)  schedule(static)
-			for(m=2;m<nmol;m++) {
+			for(m=0;m<nmol;m++) {
 				//moleculeptr* mlist=sim->mols->live[ll];
 				int i,d;
 				//mptr=mlist[m];
@@ -2449,9 +2456,7 @@ int diffuse(simptr sim) {
 
 				for(d=0;d<1;d++){
 						//if(!difm[i][ms]){
-							//mptr->pos[d]+
-							dpos[m]=difstep[i][ms]*gtable[randULI()&ngtablem1];
-							mptr->pos[0]=dpos[m];
+							mptr->pos[d]+=difstep[i][ms]*gtable[randULI()&ngtablem1];
 
 						//}
 				}
@@ -2487,7 +2492,8 @@ int diffuse(simptr sim) {
 					//movemol2closepanel(sim,mptr,dim,epsilon,neighdist,margin); 
 					movemol2closepanel(sim,mptr,3,epsilon,neighdist,margin); 
 				*/
-				//printf("%d, %d, %u,	%p, %f, %u\n", omp_get_thread_num(), m, (void*)&(mptr->pos[0]), (void*)&(sim->mols->live[ll][m]->pos[0]), mptr->pos[0], &dpos[m]);			
+				//ximi
+				//printf("%d, %d, &sim: %u, &sim->mols: %u, &sim->mols->sim: %u,  &sim->mols->sim->mols: %u,  &mols: %u,  %u, %u\n", omp_get_thread_num(), m, &sim, &(sim->mols), &(sim->mols->sim),  &(sim->mols->sim->mols), &mols, &(mptr->pos), &(mptr->pos[0]));			
 			 }
 			}
 		}

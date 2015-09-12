@@ -1540,7 +1540,10 @@ int loadsim(simptr sim,const char *fileroot,const char *filename,const char *fla
 			CHECKS(0,"unknown word or missing parameter"); }
 
 		else {
-			er=simreadstring(sim,pfp,word,line2); }
+			er=simreadstring(sim,pfp,word,line2); 
+			//ximi
+			//printf("loadsim()  th_id: %d, &sim: %u, &sim->mols: %u, &sim->mols->sim: %u\n", omp_get_thread_num(), &sim, &(sim->mols), &(sim->mols->sim));
+		}
 	
 		if(er) return 1; }
 
