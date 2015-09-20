@@ -1768,9 +1768,6 @@ int simulatetimestep(simptr sim) {
 	er=simupdate(sim);															// update any data structure changes
 	//if(er) return 8;
 
-	//simptr sim1;
-	//sim1=(simptr)malloc(sizeof(struct simstruct));	
-
 	//printf("probe 1, th_id= %d, &sim=%u, &sim->mols=%u\n", omp_get_thread_num(), (void*)&sim, (void*)&(sim->mols));
 	tmp_time0=omp_get_wtime();
 	er=(*sim->diffusefn)(sim);
@@ -1795,13 +1792,14 @@ int simulatetimestep(simptr sim) {
 					if(sim->mols->diffuselist[ll])
 						(*sim->checkwallsfn)(sim,ll,0,NULL); }
 		*/
+
 		//er=(*sim->assignmols2boxesfn)(sim,1,0);					// assign to boxes (diffusing molecs., not reborn)
 		//if(er) return 2;
 
 		//er=molsort(sim,0);	// sort live and dead
 		//if(er) return 6;
 		
-		//er=(*sim->zeroreactfn)(sim);
+		er=(*sim->zeroreactfn)(sim);
 		//if(er) return 3;
 		//er=(*sim->unimolreactfn)(sim);
 		//if(er) return 4;

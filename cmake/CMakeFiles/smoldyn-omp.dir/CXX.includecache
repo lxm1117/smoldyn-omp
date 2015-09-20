@@ -8,12 +8,6 @@
 
 ../source/NextSubVolume/Constants.h
 
-../source/NextSubVolume/Geometry.h
-Vector.h
-../source/NextSubVolume/Vector.h
-random2.h
-../source/NextSubVolume/random2.h
-
 ../source/NextSubVolume/Io.h
 string
 -
@@ -5352,8 +5346,6 @@ stdlib.h
 stdio.h
 -
 
-../source/lib/RnSort.h
-
 ../source/lib/SFMT/SFMT.h
 stdio.h
 -
@@ -5368,6 +5360,8 @@ queue.h
 string2.h
 ../source/lib/string2.h
 
+../source/lib/Sphere.h
+
 ../source/lib/Zn.h
 stdlib.h
 -
@@ -5375,28 +5369,6 @@ stdio.h
 -
 
 ../source/lib/math2.h
-
-../source/lib/opengl2.h
-smoldynconfigure.h
-../source/lib/smoldynconfigure.h
-windows.h
--
-OpenGl/gl.h
--
-GL/gl.h
--
-OpenGl/glu.h
--
-GL/glu.h
--
-GLUT/glut.h
--
-GL/glut.h
--
-GL/freeglut.h
--
-tiffio.h
--
 
 ../source/lib/parse.h
 
@@ -5413,6 +5385,8 @@ stdlib.h
 -
 math.h
 -
+
+../source/lib/rxnparam.h
 
 ../source/lib/string2.h
 
@@ -5452,93 +5426,35 @@ SimCommand.h
 smoldynconfigure.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynconfigure.h
 
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smolmolec.c
+/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smolreact.c
 stdio.h
--
-limits.h
 -
 math.h
 -
 string.h
 -
-ctype.h
--
 float.h
 -
-Geometry.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Geometry.h
 math2.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/math2.h
 random2.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/random2.h
 Rn.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Rn.h
-RnSort.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/RnSort.h
+rxnparam.h
+/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/rxnparam.h
 smoldyn.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldyn.h
 smoldynfuncs.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynfuncs.h
-smoldynconfigure.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynconfigure.h
-omp.h
--
-
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smolsim.c
-float.h
--
-math.h
--
-stdarg.h
--
-stdio.h
--
-string.h
--
-time.h
--
-math2.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/math2.h
-opengl2.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/opengl2.h
-random2.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/random2.h
-Rn.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Rn.h
-smoldyn.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldyn.h
-smoldynconfigure.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynconfigure.h
-smoldynfuncs.h
-/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynfuncs.h
+Sphere.h
+/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Sphere.h
 Zn.h
 /home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Zn.h
-string
--
-sstream
--
-omp.h
--
-
-/usr/include/x86_64-linux-gnu/tiff.h
-tiffconf.h
-/usr/include/x86_64-linux-gnu/tiffconf.h
-
-/usr/include/x86_64-linux-gnu/tiffconf.h
-
-/usr/include/x86_64-linux-gnu/tiffio.h
-tiff.h
-/usr/include/x86_64-linux-gnu/tiff.h
-tiffvers.h
-/usr/include/x86_64-linux-gnu/tiffvers.h
-windows.h
--
-stdio.h
--
-stdarg.h
--
-
-/usr/include/x86_64-linux-gnu/tiffvers.h
+Geometry.h
+/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/Geometry.h
+smoldynconfigure.h
+/home/neuro/Downloads/smoldyn-omp/source/Smoldyn/smoldynconfigure.h
 
 smoldynconfigure.h
 

@@ -2024,6 +2024,7 @@ int doreact(simptr sim,rxnptr rxn,moleculeptr mptr1,moleculeptr mptr2,int ll1,in
 	dim=sim->dim;
 	order=rxn->rxnss->order;
 
+	printf("order: %d\n", order);
 // get reaction position in rxnpos, pnl, rxnbptr
 	if(rxn->rparamt==RPconfspread) {							// confspread
 		pnl=NULL;
@@ -2066,6 +2067,7 @@ int doreact(simptr sim,rxnptr rxn,moleculeptr mptr1,moleculeptr mptr2,int ll1,in
 	calc=0;
 	dist=0;
 	for(prd=0;prd<nprod;prd++) {
+		printf("prd: %d, nprod: %d\n", prd, nprod);
 		mptr=getnextmol(sim->mols);								// mptr is current product
 		if(!mptr) return 1;
 		mptr->ident=rxn->prdident[prd];
@@ -2166,6 +2168,7 @@ int zeroreact(simptr sim) {
 		rxn=rxnss->rxn[r];
 				
 #if OPTION_VCELL
+		printf("vcell option?\n");
 		if(rxn->rateValueProvider != NULL) {
 			if(rxn->cmpt) {
 				AbstractMesh* mesh = sim->mesh;
@@ -2232,7 +2235,8 @@ int zeroreact(simptr sim) {
 		else
 #endif
 
-		{
+		{	
+			printf("no vcell\n");
 			nmol=poisrandD(rxn->prob);
 			for(i=0;i<nmol;i++) {
 				if(rxn->cmpt) compartrandpos(sim,pos,rxn->cmpt);
